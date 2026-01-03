@@ -1,0 +1,88 @@
+/* Background */
+section {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 10px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Posts Grid */
+ul {
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+/* Card Style */
+li {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+li:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+/* Title */
+h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+  color: #ffffff;
+  letter-spacing: 0.4px;
+}
+
+/* Body Text */
+p {
+  font-size: 14px;
+  color: #eef2ff;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* Buttons Container */
+li button {
+  padding: 8px 14px;
+  margin-right: 8px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: 0.25s ease;
+}
+
+/* Edit Button */
+li button:nth-child(3) {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+li button:nth-child(3):hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #02a7ff, #005de6);
+}
+
+/* Delete Button */
+li button:nth-child(4) {
+  background: linear-gradient(135deg, #ff5858, #f857a6);
+  color: white;
+}
+
+li button:nth-child(4):hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #ff3c3c, #ff2f94);
+}

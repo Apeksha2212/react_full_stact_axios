@@ -1,20 +1,14 @@
-import { useEffect } from "react";
-import { getPosts } from "./api/PostApi"
-
+import Posts from "./components/Posts";
 
 function App() {
-  console.log(getPosts());
-
-  const getPostData=async()=>{
-    const res= await getPosts();
-    console.log("res",res.data );
-  }
-
-  useEffect(() => {
-    getPostData();
-  },[]);
+  
   return (
-    <h1>Hello React Crud opration</h1>
+   <div>
+    <section className="main-section"> 
+      <Posts/>
+    </section>
+    
+   </div>
   );
 }
 
