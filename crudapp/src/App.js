@@ -2,7 +2,7 @@
 
 function App() {
   return (
-    <h1>Hwllo React Crud opration</h1>
+    <h1>Hello React Crud opration</h1>
    
   );
 }
