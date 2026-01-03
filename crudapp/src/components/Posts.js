@@ -37,4 +37,28 @@ const [data,setData]=useState([]);
   )
 }
 
+<<<<<<< Updated upstream
 export default Posts
+=======
+          return (
+            <li key={id}>
+              <div>
+                <h4>Post : {id}</h4>
+                <h3>Title : {title}</h3>
+                <p> {body}</p>
+
+                <button>Edit</button> 
+
+                {/* 👇 pass id here */}
+                <button onClick={() => handleDelete(id)}>Delete</button>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+};
+
+export default Posts;
+>>>>>>> Stashed changes
