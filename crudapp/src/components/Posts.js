@@ -39,6 +39,7 @@ const Posts = () => {
             const { id, body, title } = curelm;
             return (
                 <li key={id}>
+                    <h2>Post:{id}</h2>
                     <h3>{title}</h3>
                     <p>{body}</p>
                     <button>Edit</button>
@@ -55,42 +56,4 @@ const Posts = () => {
 
 
 export default Posts
-
-          return (
-            <li key={id}>
-              <div>
-                <h4>Post : {id}</h4>
-                <h3>Title : {title}</h3>
-                <p> {body}</p>
-
-                <button>Edit</button> 
-
-                {/* 👇 pass id here */}
-                <button onClick={() => handleDelete(id)}>Delete</button>
-              </div>
-
-    <section>
-      <ul>
-        {data.map((curelm) => {
-          const { id, body, title } = curelm;
-
-          return (
-            <li key={id}>
-              <h3>{title}</h3>
-              <p>{body}</p>
-
-              <button>Edit</button>
-
-              {/* 👇 pass id here */}
-              <button onClick={() => handleDelete(id)}>Delete</button>
- main
-            </li>
-          );
-        })}
-      </ul>
-    </section>
-  );
-};
-
-export default Posts;
 
