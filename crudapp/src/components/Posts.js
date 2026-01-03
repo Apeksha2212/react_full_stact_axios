@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from 'react'
-import { getPosts } from '../api/PostApi';
+import { deletPost, getPosts } from '../api/PostApi';
 import './Posts.css';
 
- // Adjust the path as needed
-
 const Posts = () => {
-const [data,setData]=useState([]);
+  const [data, setData] = useState([]);
 
-    const getPostData=async()=>{
-        const res=await getPosts();
-        console.log("Post data",res.data);
-        setData(res.data);
-       }
-     useEffect(() => {
-        getPostData();
-      },[]);
+  const getPostData = async () => {
+    const res = await getPosts();
+    console.log("Post data", res.data);
+    setData(res.data);
+  };
+
+  useEffect(() => {
+    getPostData();
+  }, []);
+
+  const handleDelete = (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this post?");
+    if (!confirmDelete) {
+      return;
+    }
+    deletPost(id)
+      .then(() => {
+        setData((prev) => prev.filter((post) => post.id !== id));
+        alert("Post deleted successfully");
+      })
+      .catch((error) => {
+        console.error("Error deleting post:", error);
+      });
+  };
+
   return (
+
    <section>
     <ul>
       {
@@ -37,9 +53,9 @@ const [data,setData]=useState([]);
   )
 }
 
-<<<<<<< Updated upstream
+
 export default Posts
-=======
+
           return (
             <li key={id}>
               <div>
@@ -52,6 +68,22 @@ export default Posts
                 {/* 👇 pass id here */}
                 <button onClick={() => handleDelete(id)}>Delete</button>
               </div>
+
+    <section>
+      <ul>
+        {data.map((curelm) => {
+          const { id, body, title } = curelm;
+
+          return (
+            <li key={id}>
+              <h3>{title}</h3>
+              <p>{body}</p>
+
+              <button>Edit</button>
+
+              {/* 👇 pass id here */}
+              <button onClick={() => handleDelete(id)}>Delete</button>
+ main
             </li>
           );
         })}
@@ -61,4 +93,4 @@ export default Posts
 };
 
 export default Posts;
->>>>>>> Stashed changes
+
